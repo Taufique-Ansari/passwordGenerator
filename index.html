@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <script src="https://kit.fontawesome.com/39ee998df7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @media only screen and (max-width: 500px){
+            .tablet{
+                top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container absolute flex items-center justify-center w-full h-full bg-gradient-to-tr from-purple-800 to-purple-900 ">
+        <div class="tablet absolute top-11 w-[400px] h-[500px] p-[30px]">
+            <h1 class="p-[10px] w-full text-center text-[2.1rem] font-bold text-white">Password Generator</h1>
+            <div class="display-container flex justify-center rounded-[10px] bg-[#000000da] w-full m-auto border-none items-center">
+                <input readonly placeholder="PASSWORD" class="bg-transparent text-yellow-300 placeholder:text-yellow-200 outline-none w-full font-semibold text-[1.2rem] ml-[3px] p-3.5" data-passwordDisplay>
+                <button data-copy class="relative">
+                    <span data-copyMsg class="text-black absolute top-7 rounded-[5px] p-[5px] invisible left-[-18px] bg-[#ffffff96]"></span>
+                    <i class="fa-regular fa-clone text-blue-300 mr-5 text-[20px]"></i>
+                </button>    
+            </div>
+
+            <div class="input-container bg-[#000000da] rounded-[10px] mt-[15px] p-5 text-white w-full h-auto">
+                <div class="length-container flex justify-between text-[1.2rem] font-medium">
+                    <p >Password Length</p>
+                    <p class="data-LengthNumber">0</p>
+                </div>
+                <input type="range" min="1" max="20" step="1" value="" class="slider w-full my-5 bg-yellow-300" data-LengthSlider>
+                <div class="">
+                    <div>
+                        <input type="checkbox" name="" class="border-gray-400 bg-transparent text-gray-400 " id="check1">
+                        <label for="check1" class="ml-2">Include Uppercase Letters</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" class="border-gray-400 bg-transparent text-gray-400 " id="check2">
+                        <label for="check2" class="ml-2">Include Lowercase Letters</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" class="border-gray-400 bg-transparent text-gray-400 " id="check3">
+                        <label for="check3" class="ml-2">Include Number</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" class="border-gray-400 bg-transparent text-gray-400 " id="check4">
+                        <label for="check4" class="ml-2">Include Symbols</label>
+                    </div>
+                </div>
+                <div class="strength-container flex my-[15px] items-center justify-between text-xl">
+                    <h2>Strength</h2>
+                    <div data-indicator class="w-4 h-4  rounded-[50%] bg-red-700"></div>
+                </div>
+                <button class="generateBtn w-full p-2 bg-purple-500 rounded-lg text-[1.2rem] my-2 font-semibold tracking-wider">Generate Password</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
